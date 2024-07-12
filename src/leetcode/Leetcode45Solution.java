@@ -1,7 +1,14 @@
+package leetcode;
+
+import leetcode.annotation.Case;
+import leetcode.annotation.Handler;
+
 import java.util.Arrays;
 
-public class Leetcode45Solution implements Solution{
-    public int jump(int[] nums) {
+public class Leetcode45Solution extends AbstractSolution {
+
+    @Handler
+    public int jump(Integer[] nums) {
         int []times = new int[nums.length];
         Arrays.fill(times, Integer.MAX_VALUE);
         times[0] = 0;
@@ -13,9 +20,8 @@ public class Leetcode45Solution implements Solution{
         return times[nums.length-1];
     }
 
-    @Override
-    public void test() {
-        int[] nums = {2,3,1,1,4};
-        System.out.println(jump(nums));
+    @Case
+    public Integer[] test1() {
+        return new Integer[]{2,3,1,1,4};
     }
 }

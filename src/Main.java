@@ -1,11 +1,10 @@
-import java.util.Arrays;
+import leetcode.Solution;
+
 import java.util.Scanner;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) throws ClassNotFoundException{
-        String clzNameFormatter = "Leetcode%sSolution";
+        String clzNameFormatter = "leetcode.Leetcode%sSolution";
         System.out.println("请输入题目序号：");
         Scanner scanner = new Scanner(System.in);
         int qNum = scanner.nextInt();

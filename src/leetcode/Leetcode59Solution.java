@@ -1,11 +1,20 @@
-public class Leetcode59Solution implements Solution{
-    public int[][] generateMatrix(int n) {
-        int [][]matrix = new int[n][n];
+package leetcode;
+
+import leetcode.annotation.Case;
+import leetcode.annotation.Handler;
+
+import java.util.Arrays;
+
+public class Leetcode59Solution extends AbstractSolution {
+
+    @Handler
+    public Integer[][] generateMatrix(Integer n) {
+        Integer [][]matrix = new Integer[n][n];
         giveNum(matrix, 0, n-1, 0, n-1, 1);
         return matrix;
     }
 
-    public void giveNum(int [][]matrix, int up, int down, int left, int right, int num){
+    public void giveNum(Integer [][]matrix, int up, int down, int left, int right, int num){
         if(up>down || right<left)
             return;
         int n = matrix.length;
@@ -47,8 +56,24 @@ public class Leetcode59Solution implements Solution{
         giveNum(matrix, up+1, down-1, left+1, right-1, num);
     }
 
-    @Override
-    public void test(){
+    @Case
+    public Integer test1(){
+        return 3;
+    }
 
+    @Case
+    public Integer test2(){
+        return 4;
+    }
+
+    @Override
+    public String outputArgumentToString(Object o){
+        Integer [][]matrix = (Integer[][])o;
+        StringBuilder sb = new StringBuilder();
+        for (int i=0; i<matrix.length; i++) {
+            sb.append(Arrays.toString(matrix[i]));
+            sb.append("\n");
+        }
+        return sb.toString();
     }
 }
