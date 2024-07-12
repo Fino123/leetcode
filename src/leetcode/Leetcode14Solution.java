@@ -1,4 +1,11 @@
-public class Leetcode14Solution implements Solution{
+package leetcode;
+
+import leetcode.annotation.Case;
+import leetcode.annotation.Handler;
+
+public class Leetcode14Solution extends AbstractSolution {
+
+    @Handler
     public String longestCommonPrefix(String[] strs) {
         if (strs.length==1){
             return strs[0];
@@ -30,10 +37,10 @@ public class Leetcode14Solution implements Solution{
         return shorter;
     }
 
-    @Override
-    public void test(){
+    @Case("官方测试用例1")
+    public String[] test1(){
         String[] strs = {"flower","flow","flight"};
-        System.out.println(longestCommonPrefix(strs));
+        return strs;
     }
 
 }

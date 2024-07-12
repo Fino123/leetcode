@@ -1,9 +1,16 @@
+package leetcode;
+
+import leetcode.annotation.Case;
+import leetcode.annotation.Handler;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class Leetcode179Solution implements Solution{
-    public String largestNumber(int[] nums) {
+public class Leetcode179Solution extends AbstractSolution {
+
+    @Handler
+    public String largestNumber(Integer[] nums) {
         List<String> numStr = new ArrayList<>();
         for (int num : nums){
             numStr.add(String.valueOf(num));
@@ -38,9 +45,8 @@ public class Leetcode179Solution implements Solution{
         }
     }
 
-    @Override
-    public void test(){
-        int []num = {3,30,34,5,9};
-        System.out.println(largestNumber(num));
+    @Case
+    public Integer[] test1(){
+        return new Integer[]{3,30,34,5,9};
     }
 }

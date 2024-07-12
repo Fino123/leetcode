@@ -1,9 +1,16 @@
+package leetcode;
+
+import leetcode.annotation.Case;
+import leetcode.annotation.Handler;
+
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
-public class Leetcode43Solution implements Solution{
-    public String multiply(String num1, String num2) {
+public class Leetcode43Solution extends AbstractSolution {
+    @Handler
+    public String multiply(String[] params) {
+        String num1 = params[0];
+        String num2 = params[1];
         String upNum = num1.length() >= num2.length() ? num1 : num2;
         String downNum = num1.length() >= num2.length() ? num2 : num1;
         List<String> nums = new ArrayList<>();
@@ -44,9 +51,8 @@ public class Leetcode43Solution implements Solution{
         return result.reverse().toString();
     }
 
-    @Override
-    public void test(){
-        Leetcode43Solution solution = new Leetcode43Solution();
-        System.out.println(solution.multiply("9133", "0"));
+    @Case
+    public String[] test1(){
+        return new String[]{"9133", "0"};
     }
 }
