@@ -30,6 +30,9 @@ public abstract class AbstractSolution implements Solution {
         }
         int i = 1;
         for (Method caseMethod : cases){
+            if (!caseMethod.getAnnotation(Case.class).enable()){
+                continue;
+            }
             Object caseData = caseMethod.invoke(this);
             if (caseData == null){
                 throw new RuntimeException("输入参数为空");
