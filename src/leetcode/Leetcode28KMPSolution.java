@@ -3,7 +3,10 @@ package leetcode;
 import leetcode.annotation.Case;
 import leetcode.annotation.Handler;
 
-public class Leetcode28Solution extends AbstractSolution {
+import java.util.Arrays;
+
+//kmp字符串匹配算法
+public class Leetcode28KMPSolution extends AbstractSolution {
 
     @Handler
     public int strStr(String[] param) {
@@ -28,6 +31,7 @@ public class Leetcode28Solution extends AbstractSolution {
                 next[i] = 0;
             }
         }
+        System.out.println(Arrays.toString(next));
         j = 0;
         for (int i = 0;i<ssChars.length;i++) {
             while(j>0 && ssChars[i]!=ppChars[j]){
@@ -56,5 +60,10 @@ public class Leetcode28Solution extends AbstractSolution {
     @Case("题解测试用例1")
     public String[] case3(){
         return new String[]{"abeababeabf", "abeabf"};
+    }
+
+    @Case
+    public String[] case4(){
+        return new String[]{"aaacecaaa", "aacecaaa"};
     }
 }
